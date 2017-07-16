@@ -1,1 +1,1 @@
-include ':app', ':titanlib'
+include ':app', ':hdlibrary'
