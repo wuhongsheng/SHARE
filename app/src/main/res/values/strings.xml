@@ -24,4 +24,5 @@
         completions."
     </string>
     <string name="jump">跳过</string>
+    <string name="error_loginempty">用户名或密码为空</string>
 </resources>

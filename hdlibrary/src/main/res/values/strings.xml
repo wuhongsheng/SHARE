@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hd Library</string>
+    <string name="error_network">网络异常，请检查网路连接</string>
 </resources>

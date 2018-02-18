@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/SHARE.iml" filepath="$PROJECT_DIR$/SHARE.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/hdlibrary/hdlibrary.iml" filepath="$PROJECT_DIR$/hdlibrary/hdlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mapstory/mapstory.iml" filepath="$PROJECT_DIR$/mapstory/mapstory.iml" />
     </modules>
   </component>
 </project>

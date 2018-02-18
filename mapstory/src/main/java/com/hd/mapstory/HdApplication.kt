@@ -1,12 +1,9 @@
-package com.hd.share
+package com.hd.mapstory
 
-import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import com.hd.model.UserModel
 import com.tencent.bugly.crashreport.CrashReport
-import java.util.*
 
 /**
  * Created by Whs on 2016/12/9 0009
@@ -20,47 +17,15 @@ class HdApplication : Application() {
 
     private var context:Context?=null
 
-
-    companion  object HdApplication{
-        //设备号
-        val SBH: String = ""
-        //
-        val mSharedPreferences: SharedPreferences? = null
-
-        const val USERNAME: String="USERNAME"
-        const val PSD: String="PSD"
-        const val REMEMBER: String="REMEMBER"
-
-        val usermodel: UserModel? = null
-
-
-        private val activityList: MutableList<Activity> = ArrayList()
-
-        @JvmField val msharedPreferences: SharedPreferences? = null
-        /**
-         * 添加已启动的activity
-         * @param activity
-         */
-        @JvmStatic fun addActivity(activity: Activity) {
-            activityList.add(activity)
-        }
-        /**
-         * 将list中的activity全部销毁
-         */
-        @JvmStatic fun exit() {
-            for (activity in activityList) {
-                activity.finish()
-            }
-        }
-
-        //fun setUserModel(usermodel: UserModel?):this.usermodel=usermodel
-
-
+    private var singleton: HdApplication? =null
+    //静态变量
+    companion object {
+        var sharedPreferences: SharedPreferences? = null
     }
-
     override fun onCreate() {
         super.onCreate()
         context = this.applicationContext
+        singleton = this
         /** Bugly SDK初始化
          * 参数1：上下文对象
          * 参数2：APPID，平台注册时得到,注意替换成你的appId
@@ -74,6 +39,19 @@ class HdApplication : Application() {
         SDKInitializer.initialize(getApplicationContext());*/
         //intiData();
         //mSharedPreferences = getSharedPreferences(PREFS_NAME, 0)
+        /** 获取当前网络状态  */
+        netState
+
+    }
+
+
+    /**
+     * 初始化数据
+     */
+    private fun intiData() {
+
+        // 用户信息存储
+        sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE)
 
     }
 
@@ -81,12 +59,20 @@ class HdApplication : Application() {
 
 
 
-
-
-
-
-
-
+    /**
+     * 获取网络状态
+     * @return
+     */
+    val netState: Boolean
+        get() {
+            /*if (NetUtil.getNetworkState(this) === NetUtil.NETWORN_NONE) {
+                IntetnetISVisible = false
+            } else {
+                IntetnetISVisible = true
+            }
+            return IntetnetISVisible*/
+            return true
+        }
 
 
 

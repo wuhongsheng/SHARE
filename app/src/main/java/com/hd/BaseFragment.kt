@@ -2,6 +2,7 @@ package com.hd.share
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import com.hd.BaseViewModel
 
 /**
  * Created by whs on 2017/5/27

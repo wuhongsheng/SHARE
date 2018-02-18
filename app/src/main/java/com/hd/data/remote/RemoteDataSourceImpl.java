@@ -10,21 +10,24 @@ import com.hd.data.RemotDataSource;
  * Created by whs on 2017/5/18
  */
 
-public class RemoteDataSource implements DataSource,RemotDataSource {
+public class RemoteDataSourceImpl implements DataSource,RemotDataSource {
     private Context mContext;
-    private static RemoteDataSource INSTANCE;
+    private static RemoteDataSourceImpl INSTANCE;
 
-    public RemoteDataSource(Context mContext) {
+    public RemoteDataSourceImpl(Context mContext) {
         this.mContext = mContext;
 
     }
 
-    public static RemoteDataSource getInstance(@NonNull Context context) {
+    public static RemoteDataSourceImpl getInstance(@NonNull Context context) {
         if (INSTANCE == null) {
-            INSTANCE = new RemoteDataSource(context);
+            INSTANCE = new RemoteDataSourceImpl(context);
         }
         return INSTANCE;
     }
 
 
+    public void checkLogin() {
+
+    }
 }

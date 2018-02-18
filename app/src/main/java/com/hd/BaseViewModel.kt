@@ -1,4 +1,4 @@
-package com.hd.share
+package com.hd
 
 import android.content.Context
 import android.databinding.BaseObservable
@@ -11,10 +11,10 @@ import com.hd.data.DataRepository
  * Created by whs on 2017/5/5
  */
 
-class BaseViewModel : BaseObservable() {
+open class BaseViewModel : BaseObservable() {
 
-    protected var mContext: Context? = null
-    protected var mDataRepository: DataRepository? = null
+    var mContext: Context? = null
+    var mDataRepository: DataRepository? = null
     //数据加载中
     val dataLoading = ObservableBoolean(false)
     //提示信息

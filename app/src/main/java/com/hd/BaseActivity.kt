@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.hd.BaseViewModel
 import com.hd.util.DeviceUtil
 
 /**
@@ -16,7 +17,7 @@ import com.hd.util.DeviceUtil
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    protected var mContext: Context?=null
+    private var mContext: Context?=null
 
     /** 日志输出标志  */
     protected val TAG = this.javaClass.simpleName
